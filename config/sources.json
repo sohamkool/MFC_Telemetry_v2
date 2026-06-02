@@ -1,0 +1,40 @@
+{
+  "sources": [
+    {
+      "name": "mfc1",
+      "address": 1,
+      "displayName": "mfc1",
+      "enabled": true
+    },
+    {
+      "name": "mfc2",
+      "address": 2,
+      "displayName": "mfc2",
+      "enabled": true
+    },
+    {
+      "name": "mfc3",
+      "address": 3,
+      "displayName": "mfc3",
+      "enabled": true
+    },
+    {
+      "name": "mfc4",
+      "address": 4,
+      "displayName": "mfc4",
+      "enabled": true
+    },
+    {
+      "name": "mfc5",
+      "address": 5,
+      "displayName": "mfc5",
+      "enabled": true
+    }
+  ],
+  "broadcast": {
+    "name": "all",
+    "address": 99,
+    "displayName": "all",
+    "enabled": true
+  }
+}

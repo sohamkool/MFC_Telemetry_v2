@@ -1,0 +1,218 @@
+{
+  "timing": {
+    "defaultMinCommandGapSec": 0.20,
+    "packetRequestGapSec": 0.20,
+    "controlCommandGapSec": 0.30,
+    "ledCommandGapSec": 0.20,
+    "verifyCommandGapSec": 0.25
+  }
+}
+{
+  "version": 1,
+  "description": "Packet command letters and packet payload structures. Edit packetTypes to update UI packet selections, signal browsers, decoder fields, logging and plotter signals.",
+  "packetRequest": {
+    "start": "$",
+    "end": "#",
+    "format": "${start}${source}${code}${end}"
+  },
+  "packetTypes": [
+    {
+      "name": "Instantaneous",
+      "code": "I",
+      "messageType": 1,
+      "expectedPayloadLength": 37,
+      "defaultIntervalSec": 1.0,
+      "fields": [
+        {
+          "name": "mfc_id",
+          "type": "uint8",
+          "unit": ""
+        },
+        {
+          "name": "timestamp_unix",
+          "type": "uint32",
+          "unit": "s"
+        },
+        {
+          "name": "voltage_mfc",
+          "type": "float32",
+          "unit": "V"
+        },
+        {
+          "name": "current_mfc",
+          "type": "float32",
+          "unit": "A"
+        },
+        {
+          "name": "voltage_ctl",
+          "type": "float32",
+          "unit": "V"
+        },
+        {
+          "name": "current_ctl",
+          "type": "float32",
+          "unit": "A"
+        },
+        {
+          "name": "flow_rate",
+          "type": "float32",
+          "unit": ""
+        },
+        {
+          "name": "bottle_hum",
+          "type": "float32",
+          "unit": "%"
+        },
+        {
+          "name": "bottle_temp",
+          "type": "float32",
+          "unit": "C"
+        },
+        {
+          "name": "water_temp",
+          "type": "float32",
+          "unit": "C"
+        }
+      ]
+    },
+    {
+      "name": "Averaged",
+      "code": "A",
+      "messageType": 0,
+      "expectedPayloadLength": 47,
+      "defaultIntervalSec": 10.0,
+      "fields": [
+        {
+          "name": "mfc_id",
+          "type": "uint8",
+          "unit": ""
+        },
+        {
+          "name": "timestamp_unix_beginning",
+          "type": "uint32",
+          "unit": "s"
+        },
+        {
+          "name": "timestamp_unix_ending",
+          "type": "uint32",
+          "unit": "s"
+        },
+        {
+          "name": "num_frames_sampled",
+          "type": "uint16",
+          "unit": ""
+        },
+        {
+          "name": "num_valid_frames",
+          "type": "uint16",
+          "unit": ""
+        },
+        {
+          "name": "num_frames_with_nonzero_flow",
+          "type": "uint16",
+          "unit": ""
+        },
+        {
+          "name": "total_pumped_volume",
+          "type": "float32",
+          "unit": "mL"
+        },
+        {
+          "name": "voltage_mfc",
+          "type": "float32",
+          "unit": "V"
+        },
+        {
+          "name": "current_mfc",
+          "type": "float32",
+          "unit": "A"
+        },
+        {
+          "name": "voltage_ctl",
+          "type": "float32",
+          "unit": "V"
+        },
+        {
+          "name": "current_ctl",
+          "type": "float32",
+          "unit": "A"
+        },
+        {
+          "name": "bottle_hum",
+          "type": "float32",
+          "unit": "%"
+        },
+        {
+          "name": "bottle_temp",
+          "type": "float32",
+          "unit": "C"
+        },
+        {
+          "name": "water_temp",
+          "type": "float32",
+          "unit": "C"
+        }
+      ]
+    },
+    {
+      "name": "Diagnostic",
+      "code": "D",
+      "messageType": 2,
+      "expectedPayloadLength": 24,
+      "defaultIntervalSec": 5.0,
+      "fields": [
+        {
+          "name": "mfc_id",
+          "type": "uint8",
+          "unit": ""
+        },
+        {
+          "name": "timestamp_unix",
+          "type": "uint32",
+          "unit": "s"
+        },
+        {
+          "name": "next_pump_time_unix",
+          "type": "uint32",
+          "unit": "s"
+        },
+        {
+          "name": "relay_io_status_word",
+          "type": "uint16",
+          "unit": ""
+        },
+        {
+          "name": "mppc_resistor_value",
+          "type": "uint16",
+          "unit": "ohm"
+        },
+        {
+          "name": "state_machine_state",
+          "type": "uint8",
+          "unit": ""
+        },
+        {
+          "name": "pumping_interval",
+          "type": "uint16",
+          "unit": "s"
+        },
+        {
+          "name": "set_pumping_volume",
+          "type": "uint16",
+          "unit": "mL"
+        },
+        {
+          "name": "set_pumping_time",
+          "type": "uint16",
+          "unit": "s"
+        },
+        {
+          "name": "total_volume_pumped",
+          "type": "uint32",
+          "unit": "mL"
+        }
+      ]
+    }
+  ],
+  "controlCommands": []
+}
