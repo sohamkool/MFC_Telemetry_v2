@@ -75,14 +75,3 @@ Supported payload types in this lightweight version:
 ```text
 uint8, uint16, uint32, float32
 ```
-
-## Smoke test JSON only
-
-```matlab
-run(fullfile(pwd, 'scripts', 'smoke_config_read.m'))
-```
-
-
-## Final tree dependency patch
-
-This version adds the missing `getCheckedTreeSourcesLite` helper and preserves the live signal-browser hierarchy as `PacketType -> Source -> Field` for `Tree_2` and `Tree_7`. Source selector trees are populated from `config/sources.json`; packet selectors and signal fields are populated from `config/commands.json`.
